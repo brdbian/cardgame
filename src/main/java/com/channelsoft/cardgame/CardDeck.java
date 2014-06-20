@@ -34,6 +34,9 @@ public class CardDeck {
 	}
 	
 	public static Card getRandomCard(){
+		if(cards==null||cards.size()==0){
+			initCards();
+		}
 		int r = (int) (Math.random() * cards.size()); 
 	    Card card = cards.get(r);
 	    cards.remove(r);     
